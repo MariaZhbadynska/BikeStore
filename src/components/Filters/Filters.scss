@@ -1,0 +1,124 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.fields-flex {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--text-strong);
+}
+
+.fields2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-md;
+  margin-top: 12px;
+
+  @include respond-max($bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: block;
+}
+
+.label {
+  display: block;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.field__box {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  @extend %panel-surface;
+  border-radius: $radius-lg;
+  padding: $space-xl;
+}
+
+.count {
+  font-weight: 600;
+  font-size: 27px;
+  margin: 23px 0;
+  color: var(--text-strong);
+}
+
+.slider {
+  position: relative;
+  height: 32px;
+  margin: 6px 0 4px;
+
+  &__track,
+  &__range {
+    position: absolute;
+    top: 50%;
+    height: 5px;
+    transform: translateY(-50%);
+    border-radius: 2px;
+  }
+
+  &__track {
+    inset-inline: 0;
+    background: var(--neutral-400);
+  }
+
+  &__range {
+    background: var(--thumb);
+  }
+
+  &__thumb {
+    position: absolute;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--thumb);
+    transform: translate(-50%, -50%);
+    cursor: ew-resize;
+  }
+}
+
+/* мобільні для Filters */
+@include respond-max($bp-md) {
+  .fields2 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .field__box {
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .label {
+    font-size: 18px;
+  }
+
+  .count {
+    font-size: 22px;
+    margin: 16px 0;
+  }
+}
+
+@include respond-max(480px) {
+  .slider {
+    height: 36px;
+    margin: 10px 0;
+
+    &__track,
+    &__range {
+      height: 6px;
+      border-radius: 3px;
+    }
+
+    &__thumb {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}

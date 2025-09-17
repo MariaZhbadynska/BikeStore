@@ -1,0 +1,21 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hist {
+  margin-top: 6px;
+
+  &__bars {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    align-items: flex-end;
+    height: 131px;
+
+    b {
+      display: block;
+      width: 10px;
+      background: var(--neutral-300);
+      border-radius: 2px;
+    }
+  }
+}

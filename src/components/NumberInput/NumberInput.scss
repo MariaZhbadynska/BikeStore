@@ -1,0 +1,22 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.num-input {
+  display: inline-flex;
+  align-items: center;
+  min-width: 56px;
+  max-width: 100%;
+}
+
+.num-input__field {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 28px;
+  line-height: 1.1;
+  padding: 0;
+  color: var(--text-strong);
+
+  @include focus-ring;
+}
