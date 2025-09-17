@@ -51,6 +51,8 @@
   position: relative;
   height: 32px;
   margin: 6px 0 4px;
+  touch-action: none;
+  -ms-touch-action: none; 
 
   &__track,
   &__range {
@@ -81,8 +83,10 @@
     cursor: ew-resize;
   }
 }
+.slider__thumb {
+  touch-action: none; 
+}
 
-/* мобільні для Filters */
 @include respond-max($bp-md) {
   .fields2 {
     grid-template-columns: 1fr;
