@@ -27,12 +27,14 @@ export default function PriceHistogram({ min, max, value, onChange }) {
     };
 
     const stop = () => {
-      window.removeEventListener("mousemove", move);
-      window.removeEventListener("mouseup", stop);
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", stop);
+      window.removeEventListener("pointercancel", stop);
     };
 
-    window.addEventListener("mousemove", move);
-    window.addEventListener("mouseup", stop);
+    window.addEventListener("pointermove", move, { passive: false });
+    window.addEventListener("pointerup", stop, { passive: true });
+    window.addEventListener("pointercancel", stop, { passive: true });
   }
 
   return (
@@ -51,12 +53,12 @@ export default function PriceHistogram({ min, max, value, onChange }) {
         <i
           className="slider__thumb"
           style={{ left: `${toPct(lo)}%` }}
-          onMouseDown={(e) => startDrag("min", e)}
+          onPointerDown={(e) => startDrag("min", e)}
         />
         <i
           className="slider__thumb"
           style={{ left: `${toPct(hi)}%` }}
-          onMouseDown={(e) => startDrag("max", e)}
+          onPointerDown={(e) => startDrag("max", e)}
         />
       </div>
     </div>
