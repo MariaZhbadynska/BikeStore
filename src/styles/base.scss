@@ -1,0 +1,16 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+li{
+  list-style-type: none;
+}
+
+input { color: var(--text-strong); }
