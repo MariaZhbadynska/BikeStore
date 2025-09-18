@@ -8,9 +8,14 @@
   box-shadow: var(--elev-1);
   padding: $space-xl;
   max-width: 1400px;
-  margin: 20px;
+  margin: 20px auto;
+
 }
-.content { max-width: none; margin: 0; }
+
+.content {
+  max-width: none;
+  margin: 0;
+}
 
 .panel {
   @extend %panel-surface;
@@ -68,12 +73,16 @@
   font-size: 20px;
 }
 
-.muted { color: var(--text-muted); margin-bottom: 6px; }
+.muted {
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
 
 .list {
   display: grid;
   gap: $space-xl;
   margin-top: $space-2xl;
+  padding: 0;
 }
 
 .card {
@@ -91,8 +100,16 @@
   }
 }
 
-.meta { color: var(--text-muted); font-size: 16px; }
-.price { font-weight: 700; font-size: 27px; color: var(--text-strong); }
+.meta {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 27px;
+  color: var(--text-strong);
+}
 
 @include respond-max($bp-md) {
   .pricehead {
@@ -100,26 +117,50 @@
     align-items: stretch;
     gap: 12px;
   }
+
   .toggle {
     justify-content: space-between;
     width: 100%;
     gap: 16px;
 
-    &__track { margin-left: auto; }
+    &__track {
+      margin-left: auto;
+    }
   }
 }
 
 @include respond-max(480px) {
-  .toggle__text { font-size: 22px; }
-  .h2 { font-size: 22px; margin-bottom: 14px; }
-  .sub { font-size: 18px; margin: 20px 0; }
-  .list { gap: 16px; margin-top: 20px; }
+  .toggle__text {
+    font-size: 22px;
+  }
+
+  .h2 {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  .sub {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+
+  .list {
+    gap: 16px;
+    margin-top: 20px;
+  }
+
   .card {
     padding: 16px;
     gap: 12px;
     flex-direction: column;
     align-items: flex-start;
   }
-  .price { font-size: 22px; }
-  .meta { font-size: 14px; }
+
+  .price {
+    font-size: 22px;
+  }
+
+  .meta {
+    font-size: 14px;
+  }
 }

@@ -1,12 +1,27 @@
-# React + Vite
+# 🛒 BikeStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BikeStore — це тестовий проєкт, створений на **React + Vite** для відображення списку велосипедів з можливістю:
 
-Currently, two official plugins are available:
+- фільтрації за ціною (Price Range)
+- сортування (Lowest price / Newest Listings / Closest / Retailer)
+- фільтрації за категорією (Specification)
+- пагінації (pagination)
+- перемикання світлої/темної теми
+- адаптивної верстки для мобільних пристроїв
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 Технології
 
-## Expanding the ESLint configuration
+- React (JSX)
+- Sass (SCSS)
+- Vite (для білду)
+- GitHub Pages (для деплою)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🖥 Як запустити локально
+
+```bash
+git clone https://github.com/mariazhbadynska/BikeStore.git
+cd BikeStore
+
+npm install
+
+npm run dev

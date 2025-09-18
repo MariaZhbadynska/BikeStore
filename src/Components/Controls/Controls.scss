@@ -53,6 +53,65 @@
   flex-wrap: wrap;
 }
 
+
+.spec-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 20;
+  min-width: 150px;
+  max-height: 200px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+  padding: 6px;
+}
+
+.dropdown__list {
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  max-height: 228px;
+  overflow: auto;
+}
+
+.dropdown__item+.dropdown__item {
+  margin-top: 6px;
+}
+
+.dropdown__label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--neutral-100);
+  }
+}
+
+.dropdown__text {
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.dropdown__check {
+  width: 18px;
+  height: 18px;
+}
+
 .chip {
   @include chip-bg;
   @extend %interactive;
@@ -141,7 +200,7 @@
 
   .chips {
     gap: 12px;
-    overflow-x: auto;
+    overflow: visible;
     padding-bottom: 6px;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;

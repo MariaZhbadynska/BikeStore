@@ -13,7 +13,6 @@ export default function Filters({
 }) {
   const [lo, hi] = value;
   const clamp = (v, a, b) => Math.max(a, Math.min(v, b));
-  const money = (n) => "$" + n;
 
   return (
     <section className="panel">
